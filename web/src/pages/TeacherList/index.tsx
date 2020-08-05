@@ -33,16 +33,16 @@ const TeacherList: React.FC = () => {
 
             <main>
                 <TeacherItem
-                    name="Charles Braga"
+                    name="Anderson Amorim"
                     class="Culinária"
                     description="Um exímio chefe de cozinha querendo fazer várias panquecas"
                     pricePerHour="R$1500,00"
                 />
                 <TeacherItem
-                    name="Gabriella Carvalho"
-                    class="Engenharia espacial"
-                    description="Ex-astronauta querendo te guiar até a lua"
-                    pricePerHour="R$1,99"
+                    name="Thaynara Gama"
+                    class="Especialista em doces"
+                    description="Doutorado em reproduzir e criar diversas receitas de doces!"
+                    pricePerHour="R$1000,99"
                 />
             </main>
         </div>
