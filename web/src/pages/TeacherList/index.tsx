@@ -1,52 +1,54 @@
 import React from "react";
-
-import PageHeader from "../../components/PageHeader";
-import TeacherItem from "../../components/TeacherItem";
-
 import "./styles.css";
 
-const TeacherList: React.FC = () => {
-    return (
-        <div id="page-teacher-list" className="container">
-            <PageHeader title="Estes são os proffys disponíveis.">
-                <form id="search-teachers">
-                    <div className="input-block">
-                        <label htmlFor="subject">Matéria</label>
-                        <input type="text" id="subject" placeholder="Matéria" />
-                    </div>
+import PageHeader from "../../components/PageHeader/";
+import TeacherItem from "../../components/TeacherItem";
+import Input from "../../components/Input";
+import Select from "../../components/Select";
 
-                    <div className="input-block">
-                        <label htmlFor="week_day">Dia da Semana</label>
-                        <input
-                            type="text"
-                            id="week_day"
-                            placeholder="Dia da semana"
-                        />
-                    </div>
+export default function TeacherList() {
+  return (
+    <div className="container" id="page-teacher-list">
+      <PageHeader title="Esses são os Proffys disponíveis.">
+        <form id="search-teachers">
+          <Select
+            name="subject"
+            label="Matéria"
+            options={[
+              { value: "Artes", label: "Artes" },
+              { value: "Biologia", label: "Biologia" },
+              { value: "Geografia", label: "Geografia" },
+              { value: "Matematica", label: "Matematica" },
+              { value: "Ingles", label: "Ingles" },
+              { value: "Historia", label: "Historia" },
+              { value: "Fisica", label: "Fisica" },
+              { value: "Portugues", label: "Portugues" },
+              { value: "Quimica", label: "Quimica" },
+            ]}
+          />
+          <Select
+            name="week_day"
+            label="Dia da Semana"
+            options={[
+              { value: "0", label: "Domingo" },
+              { value: "1", label: "Segunda" },
+              { value: "2", label: "Terça" },
+              { value: "3", label: "Quarta" },
+              { value: "4", label: "Quinta" },
+              { value: "5", label: "Sexta" },
+              { value: "6", label: "Sábado" },
+            ]}
+          />
 
-                    <div className="input-block">
-                        <label htmlFor="time">Horário</label>
-                        <input type="text" id="" placeholder="Horário" />
-                    </div>
-                </form>
-            </PageHeader>
+          <Input name="time" label="Hora" type="time" />
+        </form>
+      </PageHeader>
 
-            <main>
-                <TeacherItem
-                    name="Anderson Amorim"
-                    class="Culinária"
-                    description="Um exímio chefe de cozinha querendo fazer várias panquecas"
-                    pricePerHour="R$1500,00"
-                />
-                <TeacherItem
-                    name="Thaynara Gama"
-                    class="Especialista em doces"
-                    description="Doutorado em reproduzir e criar diversas receitas de doces!"
-                    pricePerHour="R$1000,99"
-                />
-            </main>
-        </div>
-    );
-};
-
-export default TeacherList;
+      <main>
+        <TeacherItem />
+        <TeacherItem />
+        <TeacherItem />
+      </main>
+    </div>
+  );
+}
